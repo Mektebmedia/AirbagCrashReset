@@ -1,0 +1,342 @@
+/* AirbagCrashReset.nl — Brand Pages Stylesheet (CarLabImmo High-Tech Clean Design) */
+
+/* ── BREADCRUMB ── */
+.bp__breadcrumb {
+  background: #F8FAFC;
+  border-bottom: 1px solid var(--clr-border);
+  padding: 12px 0;
+  font-size: 0.85rem;
+}
+.bp__breadcrumb-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+.bp__breadcrumb-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--clr-text-sub);
+}
+.bp__breadcrumb-list a {
+  color: var(--clr-text-sub);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+.bp__breadcrumb-list a:hover {
+  color: var(--clr-blue);
+}
+.bp__breadcrumb-list li[aria-current="page"] {
+  color: var(--clr-heading);
+  font-weight: 700;
+}
+.bp__breadcrumb-list svg {
+  color: #CBD5E0;
+}
+
+/* ── BRAND HERO ── */
+.bp__hero {
+  padding: 60px 0 70px;
+  background: var(--clr-bg-alt);
+  border-bottom: 1px solid var(--clr-border);
+  position: relative;
+  overflow: hidden;
+}
+.bp__hero::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  right: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0,127,255,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.bp__hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 40px;
+  align-items: center;
+}
+.bp__hero-title {
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: var(--clr-heading);
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+.bp__hero-sub {
+  font-size: 1.1rem;
+  color: var(--clr-text-sub);
+  line-height: 1.6;
+  max-width: 600px;
+  margin-bottom: 24px;
+}
+.bp__hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+.bp__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  background: #FFFFFF;
+  border: 1px solid var(--clr-border);
+  color: var(--clr-heading);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+}
+.bp__pill--green {
+  border-color: #A7F3D0;
+  background: #F0FDF4;
+  color: #065F46;
+}
+.bp__pill--blue {
+  border-color: #BAE6FD;
+  background: #F0F9FF;
+  color: #0369A1;
+}
+.bp__pill--yellow {
+  border-color: #FDE68A;
+  background: #FEFCE8;
+  color: #854D0E;
+}
+.bp__hero-btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* ── HERO INFO CARD ── */
+.bp__hero-card {
+  background: linear-gradient(135deg, #111827 0%, #1F2937 100%);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  color: #FFFFFF;
+  box-shadow: var(--shadow-lg);
+}
+.bp__hero-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin: 16px 0 10px;
+  color: #FFFFFF;
+}
+.bp__hero-card p {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* ── MODULE DATABASE (ACCORDIONS / TABLES) ── */
+.bp__db {
+  padding: 80px 0;
+  background: var(--clr-bg);
+}
+.bp__search-wrap {
+  margin-bottom: 24px;
+}
+.bp__models {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.bp__model-card {
+  background: #FFFFFF;
+  border: 2px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: var(--transition);
+}
+.bp__model-card:hover {
+  border-color: #CBD5E1;
+}
+.bp__model-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  background: #FFFFFF;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--clr-heading);
+  transition: background var(--transition);
+}
+.bp__model-btn:hover {
+  background: #F8FAFC;
+}
+.bp__model-name {
+  flex: 1;
+}
+.bp__model-count {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #007FFF;
+  background: #EBF5FF;
+  padding: 4px 12px;
+  border-radius: 100px;
+  margin-right: 14px;
+}
+.bp__model-chevron {
+  color: var(--clr-text-muted);
+  transition: transform 0.25s ease;
+}
+.bp__model-btn[aria-expanded="true"] .bp__model-chevron {
+  transform: rotate(180deg);
+  color: var(--clr-blue);
+}
+.bp__model-content {
+  display: none;
+  border-top: 1px solid var(--clr-border);
+  background: #F8FAFC;
+}
+.bp__model-content.open {
+  display: block;
+}
+.bp__model-inner {
+  padding: 0;
+  overflow-x: auto;
+}
+.bp__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.bp__table th {
+  background: #F1F5F9;
+  padding: 12px 24px;
+  text-align: left;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--clr-text-muted);
+}
+.bp__table td {
+  padding: 14px 24px;
+  font-size: 0.92rem;
+  border-bottom: 1px solid var(--clr-border);
+  color: var(--clr-text-main);
+  background: #FFFFFF;
+}
+.bp__table tr:last-child td {
+  border-bottom: none;
+}
+.bp__table tr:hover td {
+  background: #F8FAFC;
+}
+.bp__pn {
+  font-family: monospace;
+  font-weight: 700;
+  color: var(--clr-heading);
+  font-size: 0.98rem;
+}
+.bp__sn {
+  font-family: monospace;
+  color: var(--clr-text-sub);
+  font-size: 0.9rem;
+}
+
+/* ── NO LIST / SPECIAL BRANDS (e.g. Alfa Romeo) ── */
+.bp__no-list {
+  background: #FFFFFF;
+  border: 2px dashed #CBD5E1;
+  border-radius: var(--radius-lg);
+  padding: 50px 30px;
+  text-align: center;
+  max-width: 650px;
+  margin: 30px auto 0;
+}
+.bp__no-list svg {
+  color: var(--clr-blue);
+  margin-bottom: 16px;
+}
+.bp__no-list h3 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--clr-heading);
+  margin-bottom: 10px;
+}
+.bp__no-list p {
+  color: var(--clr-text-sub);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+/* ── OTHER BRANDS GRID ── */
+.bp__other-brands {
+  padding: 70px 0;
+  background: var(--clr-bg-alt);
+  border-top: 1px solid var(--clr-border);
+}
+.bp__other-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 14px;
+  margin-top: 24px;
+}
+.bp__other-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background: #FFFFFF;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: var(--transition);
+}
+.bp__other-card:hover {
+  border-color: var(--clr-blue);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+.bp__other-name {
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--clr-heading);
+}
+.bp__other-count {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--clr-text-muted);
+  background: #F1F5F9;
+  padding: 2px 8px;
+  border-radius: 100px;
+}
+
+@media (max-width: 900px) {
+  .bp__hero-inner {
+    grid-template-columns: 1fr;
+  }
+  .bp__hero-title {
+    font-size: 2.2rem;
+  }
+}
+@media (max-width: 600px) {
+  .bp__table th:nth-child(2),
+  .bp__table td:nth-child(2) {
+    display: none;
+  }
+}

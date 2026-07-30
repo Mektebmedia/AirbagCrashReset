@@ -910,6 +910,7 @@ input, textarea, select { font-family: inherit; }
   font-weight: 700;
   font-size: 0.95rem;
   color: var(--clr-text-main);
+  text-decoration: none;
   transition: var(--transition);
 }
 
