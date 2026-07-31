@@ -228,11 +228,18 @@ excel_normalized_strings = set()
 excel_tokens = set()
 
 
+exact_methods = {}
+token_methods = {}
+
 def clean_token(s):
   return re.sub(r'[^A-Z0-9]', '', s.upper())
 
 
 for r in excel_rows:
+  row_str = ' '.join(str(c) for c in r).lower()
+  obd = 'obd' in row_str
+  bench = 'bench' in row_str
+  dump = 'dump' in row_str or (not obd and not bench)
   for cell in r:
     if cell:
       raw_pn = cell.upper()
@@ -241,11 +248,65 @@ for r in excel_rows:
       raw_pn = raw_pn.strip()
       if not raw_pn:
         continue
-      excel_normalized_strings.add(clean_token(raw_pn))
+      norm = clean_token(raw_pn)
+      if len(norm) >= 4:
+        excel_normalized_strings.add(norm)
+        old = exact_methods.get(norm, (False, False, False))
+        exact_methods[norm] = (old[0] or obd, old[1] or dump, old[2] or bench)
       for token in re.split(r'[\s/,-]+', raw_pn):
         cleaned = clean_token(token)
         if len(cleaned) >= 4 and any(c.isdigit() for c in cleaned):
           excel_tokens.add(cleaned)
+          if len(cleaned) >= 6:
+            old = token_methods.get(cleaned, (False, False, False))
+            token_methods[cleaned] = (old[0] or obd, old[1] or dump, old[2] or bench)
+
+
+def get_module_methods(pn, sn):
+  obd, dump, bench = False, False, False
+  for s in [pn, sn]:
+    if not s:
+      continue
+    s_clean = re.sub(
+        r'\b(BOSCH|CONTINENTAL|DENSO|TRW|TEMIC|AUTOLIV|MOBIS|VEONEER|SIEMENS|DELPHI|MARELLI)\b',
+        '',
+        s,
+        flags=re.I,
+    )
+    norm = clean_token(s_clean)
+    if norm in exact_methods:
+      f_obd, f_dump, f_bench = exact_methods[norm]
+      obd, dump, bench = obd or f_obd, dump or f_dump, bench or f_bench
+    else:
+      for part in re.split(r'[\s/,-]+', s_clean):
+        cleaned = clean_token(part)
+        if cleaned in token_methods:
+          f_obd, f_dump, f_bench = token_methods[cleaned]
+          obd, dump, bench = obd or f_obd, dump or f_dump, bench or f_bench
+  if not (obd or dump or bench):
+    dump = True
+  methods = []
+  if obd:
+    methods.append('OBD')
+  if dump:
+    methods.append('Dump')
+  if bench:
+    methods.append('Bench')
+  return methods
+
+
+def get_method_html(methods):
+  if not methods:
+    methods = ['Dump']
+  html_parts = []
+  for m in methods:
+    if m == 'OBD':
+      html_parts.append('<div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div>')
+    elif m == 'Dump':
+      html_parts.append('<div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div>')
+    elif m == 'Bench':
+      html_parts.append('<div class="opt-row"><span class="opt-pill opt-pill--bench">Bench</span><span class="opt-text">Losse module aanleveren</span></div>')
+  return f'<div class="opt-wrap">{"".join(html_parts)}</div>'
 
 
 def item_in_excel(pn, sn):
@@ -320,12 +381,14 @@ def sync_site_data():
         pn = m.get('part_number', '').strip()
         sn = m.get('supplier_number', '').strip()
         raw_str = f'{pn} - {sn}'.strip(' -')
+        methods = get_module_methods(pn, sn)
         db_items.append({
             'brand': b_slug,
             'model': mod_name,
             'part_number': pn,
             'supplier_number': sn,
             'raw': raw_str,
+            'methods': methods,
         })
   out_js = os.path.join(PROJECT_DIR, 'modules-data.js')
   with open(out_js, 'w', encoding='utf-8') as f:
@@ -394,12 +457,16 @@ def render_model_section(model_name, modules):
     for m in modules:
         pn = m.get('part_number', '').strip()
         sn = m.get('supplier_number', '').strip()
+        methods = get_module_methods(pn, sn)
+        opt_html = get_method_html(methods)
+        methods_str = ','.join(methods)
         rows += f'''
           <tr>
             <td class="bp__pn">{pn}</td>
             <td class="bp__sn">{sn}</td>
+            <td class="bp__opt">{opt_html}</td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="{methods_str}" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -419,6 +486,7 @@ def render_model_section(model_name, modules):
               <tr>
                 <th>OEM Onderdeelnummer</th>
                 <th>Leverancier / ECU Code</th>
+                <th>Reset- & Aanleveropties</th>
                 <th></th>
               </tr>
             </thead>
@@ -658,6 +726,25 @@ def generate_page(brand_obj):
         <span class="mdb__count-badge" id="bp-search-count"></span>
       </div>
 
+      <!-- Reset- & Aanleveropties Legend -->
+      <div class="mdb__legend" style="margin-top:20px;">
+        <div class="mdb__legend-title">Aanleveropties & Resetmethoden:</div>
+        <div class="mdb__legend-items">
+          <div class="mdb__legend-item">
+            <span class="opt-pill opt-pill--obd">OBD</span>
+            <span><strong>Langskomen:</strong> Met auto of losse module bij ons op locatie langskomen.</span>
+          </div>
+          <div class="mdb__legend-item">
+            <span class="opt-pill opt-pill--dump">Dump</span>
+            <span><strong>Data of Module:</strong> Originele dump/data aanleveren per e-mail of losse module opsturen.</span>
+          </div>
+          <div class="mdb__legend-item">
+            <span class="opt-pill opt-pill--bench">Bench</span>
+            <span><strong>Losse Module:</strong> De uitgebouwde airbag module aanleveren (opsturen of langsbrengen).</span>
+          </div>
+        </div>
+      </div>
+
       {no_data_note}
       {db_block}
     </div>
@@ -763,9 +850,20 @@ def generate_page(brand_obj):
               <label for="email">E-mailadres *</label>
               <input type="email" id="email" name="email" placeholder="uw@email.nl" required>
             </div>
-            <div class="form-group">
-              <label for="partnr">Onderdeelnummer {name}</label>
-              <input type="text" id="partnr" name="partnr" placeholder="Selecteer uit de lijst hierboven...">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="partnr">Onderdeelnummer {name}</label>
+                <input type="text" id="partnr" name="partnr" placeholder="Selecteer uit de lijst hierboven...">
+              </div>
+              <div class="form-group">
+                <label for="delivery">Aanlever- & Resetoptie</label>
+                <select id="delivery" name="delivery" style="width:100%; padding:12px 14px; border:1px solid var(--clr-border); border-radius:var(--radius-sm); font-size:0.95rem; background:#fff;">
+                  <option value="Overleg">Ik wil graag advies / overleg</option>
+                  <option value="OBD">OBD — Met auto of losse module langskomen</option>
+                  <option value="Dump">Dump — Data of losse module aanleveren</option>
+                  <option value="Bench">Bench — Losse module aanleveren</option>
+                </select>
+              </div>
             </div>
             <div class="form-group">
               <label for="message">Opmerking</label>

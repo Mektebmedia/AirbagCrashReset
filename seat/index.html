@@ -174,6 +174,25 @@
         <span class="mdb__count-badge" id="bp-search-count"></span>
       </div>
 
+      <!-- Reset- & Aanleveropties Legend -->
+      <div class="mdb__legend" style="margin-top:20px;">
+        <div class="mdb__legend-title">Aanleveropties & Resetmethoden:</div>
+        <div class="mdb__legend-items">
+          <div class="mdb__legend-item">
+            <span class="opt-pill opt-pill--obd">OBD</span>
+            <span><strong>Langskomen:</strong> Met auto of losse module bij ons op locatie langskomen.</span>
+          </div>
+          <div class="mdb__legend-item">
+            <span class="opt-pill opt-pill--dump">Dump</span>
+            <span><strong>Data of Module:</strong> Originele dump/data aanleveren per e-mail of losse module opsturen.</span>
+          </div>
+          <div class="mdb__legend-item">
+            <span class="opt-pill opt-pill--bench">Bench</span>
+            <span><strong>Losse Module:</strong> De uitgebouwde airbag module aanleveren (opsturen of langsbrengen).</span>
+          </div>
+        </div>
+      </div>
+
       
       
       <div class="bp__models" id="bp-models">
@@ -191,6 +210,7 @@
               <tr>
                 <th>OEM Onderdeelnummer</th>
                 <th>Leverancier / ECU Code</th>
+                <th>Reset- & Aanleveropties</th>
                 <th></th>
               </tr>
             </thead>
@@ -198,8 +218,9 @@
           <tr>
             <td class="bp__pn">1J0909603 Siemens 5WK4163VW3</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -207,8 +228,9 @@
           <tr>
             <td class="bp__pn">7N0959655D TRW 221098-127VW10</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -216,8 +238,9 @@
           <tr>
             <td class="bp__pn">7N0959655 TRW</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -225,8 +248,9 @@
           <tr>
             <td class="bp__pn">7N0959655B TRW</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -234,8 +258,9 @@
           <tr>
             <td class="bp__pn">7N0959655C TRW 221098-115</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -243,8 +268,9 @@
           <tr>
             <td class="bp__pn">6Q0909605A</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -268,6 +294,7 @@
               <tr>
                 <th>OEM Onderdeelnummer</th>
                 <th>Leverancier / ECU Code</th>
+                <th>Reset- & Aanleveropties</th>
                 <th></th>
               </tr>
             </thead>
@@ -275,8 +302,9 @@
           <tr>
             <td class="bp__pn">1K0909605N Siemens 5WK43413VW8</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -284,8 +312,9 @@
           <tr>
             <td class="bp__pn">1K0909605T Siemens 5WK43412VW8</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -293,8 +322,9 @@
           <tr>
             <td class="bp__pn">8E0959655G Bosch 0285001668</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -302,8 +332,9 @@
           <tr>
             <td class="bp__pn">5Q0959655AS Continental</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div><div class="opt-row"><span class="opt-pill opt-pill--bench">Bench</span><span class="opt-text">Losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump,Bench" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -311,8 +342,9 @@
           <tr>
             <td class="bp__pn">1K0909605AC Siemens</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -336,6 +368,7 @@
               <tr>
                 <th>OEM Onderdeelnummer</th>
                 <th>Leverancier / ECU Code</th>
+                <th>Reset- & Aanleveropties</th>
                 <th></th>
               </tr>
             </thead>
@@ -343,8 +376,9 @@
           <tr>
             <td class="bp__pn">5QF959655L TRW VW22</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -352,8 +386,9 @@
           <tr>
             <td class="bp__pn">5QF959655NVW22</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -361,8 +396,9 @@
           <tr>
             <td class="bp__pn">5QF959655N TRW</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -386,6 +422,7 @@
               <tr>
                 <th>OEM Onderdeelnummer</th>
                 <th>Leverancier / ECU Code</th>
+                <th>Reset- & Aanleveropties</th>
                 <th></th>
               </tr>
             </thead>
@@ -393,8 +430,9 @@
           <tr>
             <td class="bp__pn">3Q0959655BHVW21</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -402,8 +440,9 @@
           <tr>
             <td class="bp__pn">3Q0959655CM TRW VW21</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -411,8 +450,9 @@
           <tr>
             <td class="bp__pn">5QF959655AP TRW VW22</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -420,8 +460,9 @@
           <tr>
             <td class="bp__pn">5QF959655SVW22</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -445,6 +486,7 @@
               <tr>
                 <th>OEM Onderdeelnummer</th>
                 <th>Leverancier / ECU Code</th>
+                <th>Reset- & Aanleveropties</th>
                 <th></th>
               </tr>
             </thead>
@@ -452,8 +494,9 @@
           <tr>
             <td class="bp__pn">5QF959655AP TRW VW22</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -461,8 +504,9 @@
           <tr>
             <td class="bp__pn">6Q0909601AE TRW</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -486,6 +530,7 @@
               <tr>
                 <th>OEM Onderdeelnummer</th>
                 <th>Leverancier / ECU Code</th>
+                <th>Reset- & Aanleveropties</th>
                 <th></th>
               </tr>
             </thead>
@@ -493,8 +538,9 @@
           <tr>
             <td class="bp__pn">1EA959655EMVW40</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -502,8 +548,9 @@
           <tr>
             <td class="bp__pn">5QF959655A TRW 233239-131VW22</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -511,8 +558,9 @@
           <tr>
             <td class="bp__pn">5QF959655A TRW VW22</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -520,8 +568,9 @@
           <tr>
             <td class="bp__pn">5QF959655AAVW22</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -529,8 +578,9 @@
           <tr>
             <td class="bp__pn">5QF959655AC TRW VW22</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -538,8 +588,9 @@
           <tr>
             <td class="bp__pn">5QF959655AD TRW VW22</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -547,8 +598,9 @@
           <tr>
             <td class="bp__pn">5QF959655AEVW22</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -556,8 +608,9 @@
           <tr>
             <td class="bp__pn">5QF959655AF TRW VW22</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -565,8 +618,9 @@
           <tr>
             <td class="bp__pn">5QF959655AG TRW VW22</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -574,8 +628,9 @@
           <tr>
             <td class="bp__pn">5QF959655AHVW22</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -583,8 +638,9 @@
           <tr>
             <td class="bp__pn">5QF959655AJVW22</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -592,8 +648,9 @@
           <tr>
             <td class="bp__pn">5QF959655AM TRW VW22</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -601,8 +658,9 @@
           <tr>
             <td class="bp__pn">5QF959655ANVW22</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -610,8 +668,9 @@
           <tr>
             <td class="bp__pn">5QF959655APVW22</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -619,8 +678,9 @@
           <tr>
             <td class="bp__pn">5QF959655AQVW22</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -628,8 +688,9 @@
           <tr>
             <td class="bp__pn">5QF959655ASVW22</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -637,8 +698,9 @@
           <tr>
             <td class="bp__pn">5QF959655ATVW22</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -646,8 +708,9 @@
           <tr>
             <td class="bp__pn">5QF959655K TRW 233239-134VW22</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -655,8 +718,9 @@
           <tr>
             <td class="bp__pn">5QF959655K TRW VW22</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -664,8 +728,9 @@
           <tr>
             <td class="bp__pn">5QF959655L TRW 233239-135VW22</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -673,8 +738,9 @@
           <tr>
             <td class="bp__pn">5QF959655L TRW VW22</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -682,8 +748,9 @@
           <tr>
             <td class="bp__pn">5QF959655MVW22</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -691,8 +758,9 @@
           <tr>
             <td class="bp__pn">5QF959655NVW22</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -700,8 +768,9 @@
           <tr>
             <td class="bp__pn">5QF959655PVW22</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -709,8 +778,9 @@
           <tr>
             <td class="bp__pn">5QF959655SVW22</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -718,8 +788,9 @@
           <tr>
             <td class="bp__pn">5QF959655TVW22</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -727,8 +798,9 @@
           <tr>
             <td class="bp__pn">6C0959655E Bosch 0285012568</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -736,8 +808,9 @@
           <tr>
             <td class="bp__pn">6C0959655H Bosch 0285013111</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -745,8 +818,9 @@
           <tr>
             <td class="bp__pn">6C0959655J BOSCH</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -754,8 +828,9 @@
           <tr>
             <td class="bp__pn">6C0959655J Bosch 0285013113</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -763,8 +838,9 @@
           <tr>
             <td class="bp__pn">6C0959655L Bosch 0285013117</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -772,8 +848,9 @@
           <tr>
             <td class="bp__pn">6R0959655 Bosch 0285010138</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -781,8 +858,9 @@
           <tr>
             <td class="bp__pn">6R0959655C Bosch 0285010527</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -790,8 +868,9 @@
           <tr>
             <td class="bp__pn">6R0959655D Bosch 0285010528</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -799,8 +878,9 @@
           <tr>
             <td class="bp__pn">6R0959655E Bosch 0285010526</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -808,8 +888,9 @@
           <tr>
             <td class="bp__pn">6R0959655J Bosch 0285010792</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -817,8 +898,9 @@
           <tr>
             <td class="bp__pn">6R0959655K Bosch 0285010793</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -826,8 +908,9 @@
           <tr>
             <td class="bp__pn">6R0959655L Bosch 0285010794</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -835,8 +918,9 @@
           <tr>
             <td class="bp__pn">6R0959655M Bosch 0285010795</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -844,8 +928,9 @@
           <tr>
             <td class="bp__pn">5QF959655AC TRW</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -853,8 +938,9 @@
           <tr>
             <td class="bp__pn">5QF959655AD TRW</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -862,8 +948,9 @@
           <tr>
             <td class="bp__pn">5QF959655AF TRW</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -871,8 +958,9 @@
           <tr>
             <td class="bp__pn">5QF959655N TRW</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -880,8 +968,9 @@
           <tr>
             <td class="bp__pn">5QF959655P TRW</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -889,8 +978,9 @@
           <tr>
             <td class="bp__pn">5QF959655Q TRW</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -898,8 +988,9 @@
           <tr>
             <td class="bp__pn">5QF959655S TRW</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -907,8 +998,9 @@
           <tr>
             <td class="bp__pn">6Q0909605AE TRW</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -916,8 +1008,9 @@
           <tr>
             <td class="bp__pn">5QF959655AH</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -941,6 +1034,7 @@
               <tr>
                 <th>OEM Onderdeelnummer</th>
                 <th>Leverancier / ECU Code</th>
+                <th>Reset- & Aanleveropties</th>
                 <th></th>
               </tr>
             </thead>
@@ -948,8 +1042,9 @@
           <tr>
             <td class="bp__pn">1C0909605A Siemens 5WK43122VW51</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -957,8 +1052,9 @@
           <tr>
             <td class="bp__pn">1EA959655AAVW40</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -966,8 +1062,9 @@
           <tr>
             <td class="bp__pn">1EA959655BHVW40</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -975,8 +1072,9 @@
           <tr>
             <td class="bp__pn">1EA959655BJVW40</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -984,8 +1082,9 @@
           <tr>
             <td class="bp__pn">1EA959655BLVW40</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -993,8 +1092,9 @@
           <tr>
             <td class="bp__pn">1EA959655CHVW40</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1002,8 +1102,9 @@
           <tr>
             <td class="bp__pn">1EA959655DDVW40</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1011,8 +1112,9 @@
           <tr>
             <td class="bp__pn">1EA959655DFVW40</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1020,8 +1122,9 @@
           <tr>
             <td class="bp__pn">1EA959655DPVW40</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1029,8 +1132,9 @@
           <tr>
             <td class="bp__pn">1EA959655EDVW40</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1038,8 +1142,9 @@
           <tr>
             <td class="bp__pn">1EA959655EFVW40</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1047,8 +1152,9 @@
           <tr>
             <td class="bp__pn">1EA959655EMVW40</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1056,8 +1162,9 @@
           <tr>
             <td class="bp__pn">3C0909605A TRW 331322VW8</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1065,8 +1172,9 @@
           <tr>
             <td class="bp__pn">3C0909605G TRW VW8</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1074,8 +1182,9 @@
           <tr>
             <td class="bp__pn">3C0909605H TRW 391129VW8</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1083,8 +1192,9 @@
           <tr>
             <td class="bp__pn">3C0909605K TRW 391131VW8</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1092,8 +1202,9 @@
           <tr>
             <td class="bp__pn">3C0909605L TRW 391124VW8</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1101,8 +1212,9 @@
           <tr>
             <td class="bp__pn">3C0909605N TRW 391126VW8</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1110,8 +1222,9 @@
           <tr>
             <td class="bp__pn">3Q0959655AC TRW 225894-351VW20</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1119,8 +1232,9 @@
           <tr>
             <td class="bp__pn">3Q0959655AD TRW 225894-152VW20</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1128,8 +1242,9 @@
           <tr>
             <td class="bp__pn">3Q0959655AD TRW VW20</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1137,8 +1252,9 @@
           <tr>
             <td class="bp__pn">3Q0959655AP TRW VW21</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1146,8 +1262,9 @@
           <tr>
             <td class="bp__pn">3Q0959655AS TRW VW20</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1155,8 +1272,9 @@
           <tr>
             <td class="bp__pn">3Q0959655AT TRW 225894-352VW20</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1164,8 +1282,9 @@
           <tr>
             <td class="bp__pn">3Q0959655BHVW21</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1173,8 +1292,9 @@
           <tr>
             <td class="bp__pn">3Q0959655CM TRW 234571-222VW21</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1182,8 +1302,9 @@
           <tr>
             <td class="bp__pn">3Q0959655P TRW 225894-144VW20</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1191,8 +1312,9 @@
           <tr>
             <td class="bp__pn">3Q0959655R TRW 225894-146VW20</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1200,8 +1322,9 @@
           <tr>
             <td class="bp__pn">3Q0959655S TRW 225894-147VW20</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1209,8 +1332,9 @@
           <tr>
             <td class="bp__pn">3Q0959655T TRW 225894-148VW20</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1218,8 +1342,9 @@
           <tr>
             <td class="bp__pn">3C0909605E TRW</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1227,8 +1352,9 @@
           <tr>
             <td class="bp__pn">3Q0959655AB TRW 225894-150</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1236,8 +1362,9 @@
           <tr>
             <td class="bp__pn">3Q0959655AB TRW 225894-350</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1245,8 +1372,9 @@
           <tr>
             <td class="bp__pn">3Q0959655AC TRW 225894-151</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1254,8 +1382,9 @@
           <tr>
             <td class="bp__pn">3Q0959655AC TRW 225894-351</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1263,8 +1392,9 @@
           <tr>
             <td class="bp__pn">5N0959655 TRW 391136</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1272,8 +1402,9 @@
           <tr>
             <td class="bp__pn">5N0959655A TRW 391135</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1281,8 +1412,9 @@
           <tr>
             <td class="bp__pn">5N0959655AA TRW</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1290,8 +1422,9 @@
           <tr>
             <td class="bp__pn">5N0959655H TRW 391241</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1299,8 +1432,9 @@
           <tr>
             <td class="bp__pn">5N0959655J TRW 391240</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1308,8 +1442,9 @@
           <tr>
             <td class="bp__pn">5N0959655N TRW 221098-104</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1317,8 +1452,9 @@
           <tr>
             <td class="bp__pn">5N0959655Q TRW 221098-110</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1326,8 +1462,9 @@
           <tr>
             <td class="bp__pn">5N0959655R TRW 221098-111</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1335,8 +1472,9 @@
           <tr>
             <td class="bp__pn">5N0959655S TRW 221098-116</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1344,8 +1482,9 @@
           <tr>
             <td class="bp__pn">5N0959655T TRW</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1353,8 +1492,9 @@
           <tr>
             <td class="bp__pn">1C0909605H Siemens 5W43127</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1362,8 +1502,9 @@
           <tr>
             <td class="bp__pn">1C0909605M Siemens 5WK4434</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1371,8 +1512,9 @@
           <tr>
             <td class="bp__pn">1EA959655EG</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1380,8 +1522,9 @@
           <tr>
             <td class="bp__pn">1EA959655EP</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1405,6 +1548,7 @@
               <tr>
                 <th>OEM Onderdeelnummer</th>
                 <th>Leverancier / ECU Code</th>
+                <th>Reset- & Aanleveropties</th>
                 <th></th>
               </tr>
             </thead>
@@ -1412,8 +1556,9 @@
           <tr>
             <td class="bp__pn">1S0959655 Bosch 0285010832</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1421,8 +1566,9 @@
           <tr>
             <td class="bp__pn">1S0959655B Bosch 0285011772</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1430,8 +1576,9 @@
           <tr>
             <td class="bp__pn">1S0959655C Bosch 0285013367</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1439,8 +1586,9 @@
           <tr>
             <td class="bp__pn">1S0959655E Bosch 0285014647</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1448,8 +1596,9 @@
           <tr>
             <td class="bp__pn">1SB959655 Bosch 0285011837</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1457,8 +1606,9 @@
           <tr>
             <td class="bp__pn">1SB959655A Bosch 0285013365</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1482,6 +1632,7 @@
               <tr>
                 <th>OEM Onderdeelnummer</th>
                 <th>Leverancier / ECU Code</th>
+                <th>Reset- & Aanleveropties</th>
                 <th></th>
               </tr>
             </thead>
@@ -1489,8 +1640,9 @@
           <tr>
             <td class="bp__pn">6Q0909605A</td>
             <td class="bp__sn"></td>
+            <td class="bp__opt"><div class="opt-wrap"><div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div><div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div></div></td>
             <td>
-              <a href="#contact" class="btn btn--blue" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
+              <a href="#contact" class="btn btn--blue" data-methods="OBD,Dump" style="padding:6px 14px; font-size:0.78rem; white-space:nowrap;">
                 Aanmelden
               </a>
             </td>
@@ -1720,9 +1872,20 @@
               <label for="email">E-mailadres *</label>
               <input type="email" id="email" name="email" placeholder="uw@email.nl" required>
             </div>
-            <div class="form-group">
-              <label for="partnr">Onderdeelnummer Seat</label>
-              <input type="text" id="partnr" name="partnr" placeholder="Selecteer uit de lijst hierboven...">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="partnr">Onderdeelnummer Seat</label>
+                <input type="text" id="partnr" name="partnr" placeholder="Selecteer uit de lijst hierboven...">
+              </div>
+              <div class="form-group">
+                <label for="delivery">Aanlever- & Resetoptie</label>
+                <select id="delivery" name="delivery" style="width:100%; padding:12px 14px; border:1px solid var(--clr-border); border-radius:var(--radius-sm); font-size:0.95rem; background:#fff;">
+                  <option value="Overleg">Ik wil graag advies / overleg</option>
+                  <option value="OBD">OBD — Met auto of losse module langskomen</option>
+                  <option value="Dump">Dump — Data of losse module aanleveren</option>
+                  <option value="Bench">Bench — Losse module aanleveren</option>
+                </select>
+              </div>
             </div>
             <div class="form-group">
               <label for="message">Opmerking</label>

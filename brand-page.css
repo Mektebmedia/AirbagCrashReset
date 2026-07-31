@@ -340,3 +340,49 @@
     display: none;
   }
 }
+
+/* ── Reset- & Aanleveropties (OBD / Dump / Bench) ─────────────────────────── */
+.opt-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.opt-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.opt-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+.opt-pill--obd {
+  background: rgba(16, 185, 129, 0.12);
+  color: #059669;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+}
+.opt-pill--dump {
+  background: rgba(59, 130, 246, 0.12);
+  color: #2563eb;
+  border: 1px solid rgba(59, 130, 246, 0.35);
+}
+.opt-pill--bench {
+  background: rgba(245, 158, 11, 0.12);
+  color: #d97706;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+}
+.opt-text {
+  font-size: 0.81rem;
+  color: #374151;
+  font-weight: 500;
+  line-height: 1.3;
+}
+

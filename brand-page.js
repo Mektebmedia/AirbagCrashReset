@@ -139,7 +139,7 @@
     });
   }
 
-  /* ── Prefill Part Number when clicking "Aanmelden" on a table row ── */
+  /* ── Prefill Part Number and Delivery Option when clicking "Aanmelden" on a table row ── */
   document.querySelectorAll('.bp__table a[href="#contact"]').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const row = btn.closest('tr');
@@ -152,6 +152,17 @@
           partnrInput.style.transition = 'background 0.3s ease';
           partnrInput.style.background = '#FEFCE8';
           setTimeout(() => partnrInput.style.background = '', 2000);
+        }
+      }
+      const methodsStr = btn.dataset.methods || '';
+      const deliveryInput = document.getElementById('delivery');
+      if (deliveryInput && methodsStr) {
+        const firstMethod = methodsStr.split(',')[0];
+        if (firstMethod === 'OBD' || firstMethod === 'Dump' || firstMethod === 'Bench') {
+          deliveryInput.value = firstMethod;
+          deliveryInput.style.transition = 'background 0.3s ease';
+          deliveryInput.style.background = '#FEFCE8';
+          setTimeout(() => deliveryInput.style.background = '', 2000);
         }
       }
     });

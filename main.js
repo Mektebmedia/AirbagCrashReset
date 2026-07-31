@@ -172,6 +172,22 @@
       return;
     }
 
+    function renderMethodHtml(methods) {
+      if (!methods || !methods.length) {
+        methods = ['Dump'];
+      }
+      return '<div class="opt-wrap">' + methods.map(m => {
+        if (m === 'OBD') {
+          return '<div class="opt-row"><span class="opt-pill opt-pill--obd">OBD</span><span class="opt-text">Met auto of losse module langskomen</span></div>';
+        } else if (m === 'Dump') {
+          return '<div class="opt-row"><span class="opt-pill opt-pill--dump">Dump</span><span class="opt-text">Data of losse module aanleveren</span></div>';
+        } else if (m === 'Bench') {
+          return '<div class="opt-row"><span class="opt-pill opt-pill--bench">Bench</span><span class="opt-text">Losse module aanleveren</span></div>';
+        }
+        return '';
+      }).join('') + '</div>';
+    }
+
     // Table rows
     mdbTbody.innerHTML = page.map(m => `
       <tr>
@@ -179,8 +195,9 @@
         <td>${highlight(m.model || '—', query)}</td>
         <td class="mdb__part-num">${highlight(m.part_number || m.raw, query)}</td>
         <td class="mdb__supplier">${highlight(m.supplier_number || '', query)}</td>
+        <td class="mdb__opt">${renderMethodHtml(m.methods)}</td>
         <td>
-          <a href="#contact" class="btn btn--blue" data-brand="${m.brand || ''}" data-model="${m.model || ''}" data-part="${m.part_number || m.raw || ''}" data-supplier="${m.supplier_number || ''}" style="padding:8px 16px; font-size:0.8rem;">
+          <a href="#contact" class="btn btn--blue" data-brand="${m.brand || ''}" data-model="${m.model || ''}" data-part="${m.part_number || m.raw || ''}" data-supplier="${m.supplier_number || ''}" data-methods="${(m.methods || []).join(',')}" style="padding:8px 16px; font-size:0.8rem;">
             Aanmelden
           </a>
         </td>
@@ -194,8 +211,10 @@
         const model = btn.dataset.model || '';
         const part = btn.dataset.part || '';
         const supplier = btn.dataset.supplier || '';
+        const methodsStr = btn.dataset.methods || '';
         const brandInput = document.getElementById('brand');
         const partnrInput = document.getElementById('partnr');
+        const deliveryInput = document.getElementById('delivery');
         if (brandInput) {
           brandInput.value = `${brandLabel(brand)} ${model}`.trim();
           brandInput.style.transition = 'background 0.3s ease';
@@ -207,6 +226,15 @@
           partnrInput.style.transition = 'background 0.3s ease';
           partnrInput.style.background = '#FEFCE8';
           setTimeout(() => partnrInput.style.background = '', 2000);
+        }
+        if (deliveryInput && methodsStr) {
+          const firstMethod = methodsStr.split(',')[0];
+          if (firstMethod === 'OBD' || firstMethod === 'Dump' || firstMethod === 'Bench') {
+            deliveryInput.value = firstMethod;
+            deliveryInput.style.transition = 'background 0.3s ease';
+            deliveryInput.style.background = '#FEFCE8';
+            setTimeout(() => deliveryInput.style.background = '', 2000);
+          }
         }
       });
     });

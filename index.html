@@ -506,6 +506,25 @@
         </div>
       </div>
 
+      <!-- Reset- & Aanleveropties Legend -->
+      <div class="mdb__legend">
+        <div class="mdb__legend-title">Aanleveropties & Resetmethoden:</div>
+        <div class="mdb__legend-items">
+          <div class="mdb__legend-item">
+            <span class="opt-pill opt-pill--obd">OBD</span>
+            <span><strong>Langskomen:</strong> Met auto of losse module bij ons op locatie langskomen.</span>
+          </div>
+          <div class="mdb__legend-item">
+            <span class="opt-pill opt-pill--dump">Dump</span>
+            <span><strong>Data of Module:</strong> Originele dump/data aanleveren per e-mail of losse module opsturen.</span>
+          </div>
+          <div class="mdb__legend-item">
+            <span class="opt-pill opt-pill--bench">Bench</span>
+            <span><strong>Losse Module:</strong> De uitgebouwde airbag module aanleveren (opsturen of langsbrengen).</span>
+          </div>
+        </div>
+      </div>
+
       <!-- Results Table -->
       <div class="mdb__table-wrap" id="mdb-table-wrap">
         <div class="mdb__empty" id="mdb-empty">
@@ -520,6 +539,7 @@
               <th>Model</th>
               <th>OEM Part Number</th>
               <th>Leverancier / ECU Code</th>
+              <th>Reset- & Aanleveropties</th>
               <th></th>
             </tr>
           </thead>
@@ -809,9 +829,20 @@
               </div>
             </div>
 
-            <div class="form-group">
-              <label for="partnr">Onderdeelnummer (indien bekend)</label>
-              <input type="text" id="partnr" name="partnr" placeholder="bijv. Bosch 0 285 011 ...">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="partnr">Onderdeelnummer (indien bekend)</label>
+                <input type="text" id="partnr" name="partnr" placeholder="bijv. Bosch 0 285 011 ...">
+              </div>
+              <div class="form-group">
+                <label for="delivery">Aanlever- & Resetoptie</label>
+                <select id="delivery" name="delivery" style="width:100%; padding:12px 14px; border:1px solid var(--clr-border); border-radius:var(--radius-sm); font-size:0.95rem; background:#fff;">
+                  <option value="Overleg">Ik wil graag advies / overleg</option>
+                  <option value="OBD">OBD — Met auto of losse module langskomen</option>
+                  <option value="Dump">Dump — Data of losse module aanleveren</option>
+                  <option value="Bench">Bench — Losse module aanleveren</option>
+                </select>
+              </div>
             </div>
 
             <div class="form-group">
