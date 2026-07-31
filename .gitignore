@@ -1,4 +1,7 @@
 .vercel
+.env*
+.gemini/
+node_modules/
 *.xlsx
 *.json
 .DS_Store

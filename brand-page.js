@@ -1,4 +1,4 @@
-/* AirbagCrashReset.nl — Brand Page JavaScript (Accordion, Search & Form Prefill) */
+/* AirbagData.nl — Brand Page JavaScript (Accordion, Search & Form Prefill) */
 (function () {
   'use strict';
 

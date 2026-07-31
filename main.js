@@ -1,4 +1,4 @@
-/* AirbagCrashReset.nl — Main JavaScript (with 16,878-entry Module Database) */
+/* AirbagData.nl — Main JavaScript (with 16,878-entry Module Database) */
 (function () {
   'use strict';
 
@@ -180,12 +180,36 @@
         <td class="mdb__part-num">${highlight(m.part_number || m.raw, query)}</td>
         <td class="mdb__supplier">${highlight(m.supplier_number || '', query)}</td>
         <td>
-          <a href="#contact" class="btn btn--blue" style="padding:8px 16px; font-size:0.8rem;">
+          <a href="#contact" class="btn btn--blue" data-brand="${m.brand || ''}" data-model="${m.model || ''}" data-part="${m.part_number || m.raw || ''}" data-supplier="${m.supplier_number || ''}" style="padding:8px 16px; font-size:0.8rem;">
             Aanmelden
           </a>
         </td>
       </tr>
     `).join('');
+
+    // Attach form prefill to Aanmelden buttons
+    mdbTbody.querySelectorAll('a[href="#contact"]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const brand = btn.dataset.brand || '';
+        const model = btn.dataset.model || '';
+        const part = btn.dataset.part || '';
+        const supplier = btn.dataset.supplier || '';
+        const brandInput = document.getElementById('brand');
+        const partnrInput = document.getElementById('partnr');
+        if (brandInput) {
+          brandInput.value = `${brandLabel(brand)} ${model}`.trim();
+          brandInput.style.transition = 'background 0.3s ease';
+          brandInput.style.background = '#FEFCE8';
+          setTimeout(() => brandInput.style.background = '', 2000);
+        }
+        if (partnrInput) {
+          partnrInput.value = `${part} ${supplier ? '- ' + supplier : ''}`.trim();
+          partnrInput.style.transition = 'background 0.3s ease';
+          partnrInput.style.background = '#FEFCE8';
+          setTimeout(() => partnrInput.style.background = '', 2000);
+        }
+      });
+    });
 
     // Pagination
     const totalPages = Math.ceil(total / PAGE_SIZE);
@@ -276,18 +300,43 @@
     runSearch();
   });
 
-  // Allow brand card clicks to filter the module database
-  document.querySelectorAll('.brand-card[data-brand]').forEach(card => {
-    card.addEventListener('click', () => {
-      const brand = card.dataset.brand;
-      if (brand && mdbBrand) {
-        mdbBrand.value = brand;
-        mdbSearch.value = '';
-        runSearch();
-        document.getElementById('module-checker').scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+  // Quick Brand Chips
+  document.querySelectorAll('.mdb__quick-chip[data-brand]').forEach(chip => {
+    chip.addEventListener('click', () => {
+      document.querySelectorAll('.mdb__quick-chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      const b = chip.dataset.brand || '';
+      if (mdbBrand) mdbBrand.value = b;
+      runSearch();
     });
   });
+
+  // Header Database Search Input
+  const headerSearchInput = document.getElementById('header-search-input');
+  const headerSearchBtn = document.getElementById('header-search-btn');
+  const triggerHeaderSearch = () => {
+    if (!headerSearchInput) return;
+    const q = headerSearchInput.value.trim();
+    if (mdbSearch) {
+      mdbSearch.value = q;
+      runSearch();
+      const target = document.getElementById('module-checker');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  };
+  if (headerSearchInput) {
+    headerSearchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        triggerHeaderSearch();
+      }
+    });
+  }
+  if (headerSearchBtn) {
+    headerSearchBtn.addEventListener('click', triggerHeaderSearch);
+  }
 
   /* ── Contact Form ── */
   const form = document.getElementById('contact-form');

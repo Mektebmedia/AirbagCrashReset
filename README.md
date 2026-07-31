@@ -1,6 +1,6 @@
-# AirbagCrashReset.nl — Landingspagina
+# AirbagData.nl — ECU Crash Database & Landingspagina
 
-Premium landingspagina voor airbag crash data reset service. Gebouwd met pure HTML, CSS en JavaScript.
+Premium landingspagina en ECU database (16.878 modules) voor professionele airbag crash data reset services in Nederland. Geïnspireerd op het CarLabImmo designthema.
 
 ## 🚀 Kenmerken
 
@@ -24,12 +24,12 @@ AirbagCrash/
 └── README.md       # Dit bestand
 ```
 
-## 🎨 Design systeem
+## 🎨 Design systeem (CarLabImmo Geïnspireerd)
 
-- **Primaire kleur**: `#e85d04` (oranje)
-- **Achtergrond**: `#0d0f14` (dark)
-- **Font**: Poppins + Montserrat (Google Fonts)
-- **Stijl**: Glassmorphism, dark mode, premium
+- **Primaire kleuren**: `#FFD102` (Yellow) & `#007FFF` (Tech Blue)
+- **Achtergrond**: `#FFFFFF` / `#F8FAFC` (met `#0F172A` dark navy accenten)
+- **Font**: Montserrat + Poppins (Google Fonts)
+- **Stijl**: Clean automotive engineering database, hoge leesbaarheid, interactieve tabelrijen
 
 ## 📱 Secties
 
@@ -52,7 +52,7 @@ Voor het contactformulier: vervang de simulatie in `main.js` door een echte endp
 ## 📞 Contact
 
 - Telefoon: 06-52619000
-- E-mail: info@airbagcrashreset.nl
+- E-mail: info@airbagdata.nl
 - Adres: In de Cramer 29c, 6411 RS Heerlen
 - WhatsApp: [wa.me/31652619000](https://wa.me/31652619000)
 

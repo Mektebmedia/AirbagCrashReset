@@ -1,5 +1,5 @@
 /* ============================================================
-   AirbagCrashReset.nl — CarLabImmo Style Design System
+   AirbagData.nl — CarLabImmo Style Design System
    Inspired directly by carlabimmo.com style tokens
    ============================================================ */
 
@@ -376,6 +376,28 @@ input, textarea, select { font-family: inherit; }
   color: var(--clr-text-muted);
   pointer-events: none;
 }
+.header-search__btn {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--clr-blue);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 6px;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.header-search__btn:hover {
+  background: var(--clr-blue-hover);
+}
 
 /* Burger */
 .burger {
@@ -392,6 +414,15 @@ input, textarea, select { font-family: inherit; }
   background: var(--clr-heading);
   border-radius: 4px;
   transition: var(--transition);
+}
+.burger[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7.5px) rotate(45deg);
+}
+.burger[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+.burger[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7.5px) rotate(-45deg);
 }
 
 /* ── HERO SECTION (CarLabImmo Product Header Style) ── */
@@ -1438,6 +1469,41 @@ input, textarea, select { font-family: inherit; }
   padding: 90px 0;
   background: var(--clr-bg);
   border-bottom: 1px solid var(--clr-border);
+}
+
+/* Quick Brand Chips (CarLabImmo style) */
+.mdb__quick-brands {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+.mdb__quick-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--clr-text-muted);
+  margin-right: 4px;
+}
+.mdb__quick-chip {
+  padding: 6px 14px;
+  border-radius: 100px;
+  border: 1px solid var(--clr-border-dark);
+  background: #FFFFFF;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--clr-text-main);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.mdb__quick-chip:hover {
+  border-color: var(--clr-blue);
+  color: var(--clr-blue);
+}
+.mdb__quick-chip.active {
+  background: #0F172A;
+  color: #FFFFFF;
+  border-color: #0F172A;
 }
 
 /* Search bar */

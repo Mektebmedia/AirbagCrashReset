@@ -1,16 +1,18 @@
 """
-Generate all brand pages for AirbagCrashReset.nl
+Generate all brand pages for AirbagData.nl
 Creates: /audi/index.html, /volkswagen/index.html, etc.
 """
 import json, os, re
 import xml.etree.ElementTree as ET
 import zipfile
 
-# ── Load data ──────────────────────────────────────────────────────────────────
+# ── Load modules_raw.json or fall back to modules_filtered.json ─────────────────
 PROJECT_DIR = '/Users/sammihamadeh/Desktop/AutomotiveNL-26/AirbagCrash'
 raw_json_path = (
     '/Users/sammihamadeh/.gemini/antigravity/brain/cbd86e4c-0d7d-4cb1-91f6-8cb47dd3ca25/modules_raw.json'
 )
+if not os.path.exists(raw_json_path):
+  raw_json_path = os.path.join(PROJECT_DIR, 'modules_filtered.json')
 with open(raw_json_path, 'r', encoding='utf-8') as f:
   data = json.load(f)
 
@@ -485,9 +487,9 @@ def generate_page(brand_obj):
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{name} Airbag Crash Data Reset | Vanaf €99,- | AirbagCrashReset.nl</title>
-  <meta name="description" content="{name} airbag module reset service. {desc} Binnen 24 uur, 100% veilig, plug & play. Vanaf €99,-.">
-  <link rel="canonical" href="https://www.airbagcrashreset.nl/{slug}/">
+  <title>{name} Airbag Crash Data Reset & ECU Database | Vanaf €99,- | AirbagData.nl</title>
+  <meta name="description" content="{name} airbag module reset service (AirbagData.nl). {desc} Binnen 24 uur, 100% veilig, plug & play. Vanaf €99,-.">
+  <link rel="canonical" href="https://www.airbagdata.nl/{slug}/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -521,9 +523,9 @@ def generate_page(brand_obj):
   <!-- ── NAVBAR ── -->
   <header class="header" id="header">
     <div class="wrap header__inner">
-      <a href="/" class="logo" aria-label="AirbagCrashReset.nl Home">
-        <span class="logo__airbag">AIRBAG</span><span class="logo__crash">CRASH</span><span class="logo__reset">RESET</span>
-        <span class="logo__badge">PRO</span>
+      <a href="/" class="logo" aria-label="AirbagData.nl Home">
+        <span class="logo__airbag">AIRBAG</span><span class="logo__crash">DATA</span><span class="logo__reset">.NL</span>
+        <span class="logo__badge">DATABASE PRO</span>
       </a>
       <nav class="nav" aria-label="Hoofdmenu">
         <ul>
@@ -739,7 +741,7 @@ def generate_page(brand_obj):
               </div>
               <div>
                 <div class="contact__info-label">E-mail</div>
-                <div class="contact__info-val"><a href="mailto:info@airbagcrashreset.nl">info@airbagcrashreset.nl</a></div>
+                <div class="contact__info-val"><a href="mailto:info@airbagdata.nl">info@airbagdata.nl</a></div>
               </div>
             </div>
           </div>
@@ -786,10 +788,10 @@ def generate_page(brand_obj):
       <div class="footer__grid">
         <div class="footer__brand">
           <a href="/" class="logo" style="color:#FFFFFF;">
-            <span>AIRBAG</span><span style="color:#007FFF;">CRASH</span><span>RESET</span>
-            <span class="logo__badge">PRO</span>
+            <span>AIRBAG</span><span style="color:#007FFF;">DATA</span><span>.NL</span>
+            <span class="logo__badge">DATABASE PRO</span>
           </a>
-          <p>Specialist in airbag crash data reset. Alle {name} modellen ondersteund.</p>
+          <p>Specialist in airbag crash data reset & ECU database. Alle {name} modellen ondersteund.</p>
         </div>
         <div class="footer__links">
           <div class="footer__col">
@@ -806,7 +808,7 @@ def generate_page(brand_obj):
             <ul>
               <li><a href="tel:0652619000">06-52619000</a></li>
               <li><a href="https://wa.me/31652619000">WhatsApp</a></li>
-              <li><a href="mailto:info@airbagcrashreset.nl">info@airbagcrashreset.nl</a></li>
+              <li><a href="mailto:info@airbagdata.nl">info@airbagdata.nl</a></li>
             </ul>
           </div>
           <div class="footer__col">
@@ -821,7 +823,7 @@ def generate_page(brand_obj):
       </div>
       <div class="footer__bottom">
         <div class="footer__bottom-inner">
-          <div>© 2026 AirbagCrashReset.nl</div>
+          <div>© 2026 AirbagData.nl — Alle rechten voorbehouden.</div>
           <div class="footer__bottom-links">
             <a href="/#contact">Contact</a>
           </div>

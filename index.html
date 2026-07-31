@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Airbag Crash Data Reset | Binnen 24 Uur & Vanaf €99,- | AirbagCrashReset.nl</title>
-  <meta name="description" content="Professionele airbag crash data reset service in Nederland. Wij resetten ECU's en airbag modules na een ongeval. Binnen 24 uur, 100% veilig en 99% slagingspercentage.">
-  <meta name="keywords" content="airbag crash reset, airbag module reset, crash data wissen, airbag ecu reparatie, autodiagnose heerlen">
-  <link rel="canonical" href="https://www.airbagcrashreset.nl/">
+  <title>AirbagData.nl | Airbag Crash Data Reset & ECU Database | Vanaf €99,-</title>
+  <meta name="description" content="Professionele airbag crash data reset service en ECU database in Nederland (AirbagData.nl). Wij resetten ECU's en airbag modules na een ongeval. Binnen 24 uur, 100% veilig en 99% slagingspercentage.">
+  <meta name="keywords" content="airbag crash reset, airbagdata, airbag data nl, airbag module reset, crash data wissen, airbag ecu reparatie, autodiagnose heerlen">
+  <link rel="canonical" href="https://www.airbagdata.nl/">
 
   <!-- Google Fonts: Montserrat + Poppins (CarLabImmo font stack) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,11 +20,11 @@
   {
     "@context": "https://schema.org",
     "@type": "AutoRepair",
-    "name": "AirbagCrashReset.nl",
-    "image": "https://www.airbagcrashreset.nl/hero-airbag.jpg",
-    "url": "https://www.airbagcrashreset.nl/",
+    "name": "AirbagData.nl",
+    "image": "https://www.airbagdata.nl/hero-airbag.jpg",
+    "url": "https://www.airbagdata.nl/",
     "telephone": "+31652619000",
-    "email": "info@airbagcrashreset.nl",
+    "email": "info@airbagdata.nl",
     "priceRange": "€99 - €149",
     "address": {
       "@type": "PostalAddress",
@@ -87,15 +87,18 @@
   <!-- ── NAVBAR (CarLabImmo Header) ── -->
   <header class="header" id="header">
     <div class="wrap header__inner">
-      <a href="#" class="logo" aria-label="AirbagCrashReset.nl Home">
-        <span class="logo__airbag">AIRBAG</span><span class="logo__crash">CRASH</span><span class="logo__reset">RESET</span>
-        <span class="logo__badge">PRO</span>
+      <a href="#" class="logo" aria-label="AirbagData.nl Home">
+        <span class="logo__airbag">AIRBAG</span><span class="logo__crash">DATA</span><span class="logo__reset">.NL</span>
+        <span class="logo__badge">DATABASE PRO</span>
       </a>
 
       <!-- CarLabImmo style header database lookup input -->
       <div class="header-search">
         <svg class="header-search__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-        <input type="text" placeholder="Zoek op ECU nr. of merk (bijv. Bosch, Audi)..." aria-label="Zoek module">
+        <input type="text" id="header-search-input" placeholder="Zoek op ECU nr. of merk (bijv. Bosch, Audi)..." aria-label="Zoek module in database">
+        <button type="button" class="header-search__btn" id="header-search-btn" aria-label="Zoek in database">
+          <span>→</span>
+        </button>
       </div>
 
       <nav class="nav" aria-label="Hoofdmenu">
@@ -131,7 +134,7 @@
       <div class="hero__content">
         <div class="hero__tag">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-          <span>Bespaar tot 80% vs. de dealer</span>
+          <span>Bespaar tot 80% vs. de dealer • AirbagData.nl</span>
         </div>
 
         <h1 class="hero__title">
@@ -308,7 +311,7 @@
   <section class="why" id="waarom-wij">
     <div class="wrap">
       <div class="section-header">
-        <h2>Waarom AirbagCrashReset.nl?</h2>
+        <h2>Waarom AirbagData.nl?</h2>
         <span class="section-header__badge">Onze Voordelen</span>
       </div>
       <p class="section-sub">
@@ -430,6 +433,19 @@
       <p class="section-sub">
         Zoek direct op uw <strong>OEM-onderdeelnummer</strong> (bijv. <em>2Q0 959 655</em>) of op de <strong>leverancierscode</strong> (bijv. <em>BOSCH 0 285</em>) om te controleren of uw module in onze database staat.
       </p>
+
+      <!-- Quick Brand Chips (CarLabImmo style) -->
+      <div class="mdb__quick-brands">
+        <span class="mdb__quick-label">Snelfilter:</span>
+        <button type="button" class="mdb__quick-chip active" data-brand="">Alle (14.264)</button>
+        <button type="button" class="mdb__quick-chip" data-brand="audi">Audi</button>
+        <button type="button" class="mdb__quick-chip" data-brand="bmw">BMW</button>
+        <button type="button" class="mdb__quick-chip" data-brand="volkswagen">Volkswagen</button>
+        <button type="button" class="mdb__quick-chip" data-brand="mercedes">Mercedes-Benz</button>
+        <button type="button" class="mdb__quick-chip" data-brand="peugeot">Peugeot</button>
+        <button type="button" class="mdb__quick-chip" data-brand="renault">Renault</button>
+        <button type="button" class="mdb__quick-chip" data-brand="ford">Ford</button>
+      </div>
 
       <!-- Search & Filter Bar -->
       <div class="mdb__search-bar">
@@ -730,7 +746,7 @@
 
       <div class="contact__grid">
         <div>
-          <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight:800; margin-bottom: 12px;">AutoDiagnose / AirbagCrashReset.nl</h3>
+          <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight:800; margin-bottom: 12px;">AutoDiagnose / AirbagData.nl</h3>
           <p style="font-size: 0.95rem; color:var(--clr-text-sub); line-height: 1.7;">
             Wij zijn gespecialiseerd in auto-elektronica, airbag ecu herstel en storingsdiagnose. U bent op afspraak van harte welkom in onze werkplaats of u kunt uw module veilig per post versturen.
           </p>
@@ -752,7 +768,7 @@
               </div>
               <div>
                 <div class="contact__info-label">E-mailadres</div>
-                <div class="contact__info-val"><a href="mailto:info@airbagcrashreset.nl">info@airbagcrashreset.nl</a></div>
+                <div class="contact__info-val"><a href="mailto:info@airbagdata.nl">info@airbagdata.nl</a></div>
               </div>
             </div>
 
@@ -822,8 +838,8 @@
       <div class="footer__grid">
         <div class="footer__brand">
           <a href="#" class="logo" style="color:#FFFFFF;">
-            <span>AIRBAG</span><span style="color:#007FFF;">CRASH</span><span>RESET</span>
-            <span class="logo__badge">PRO</span>
+            <span>AIRBAG</span><span style="color:#007FFF;">DATA</span><span>.NL</span>
+            <span class="logo__badge">DATABASE PRO</span>
           </a>
           <p>
             Dé specialist in het professioneel wissen van crash data uit airbag modules en ECU's in Nederland. Snelle service per post of in onze werkplaats in Heerlen.
@@ -851,7 +867,7 @@
               <li><a href="#contact">Module Aanmelden</a></li>
               <li><a href="https://wa.me/31652619000" target="_blank" rel="noopener">WhatsApp Support</a></li>
               <li><a href="tel:0652619000">06 - 52 61 90 00</a></li>
-              <li><a href="mailto:info@airbagcrashreset.nl">info@airbagcrashreset.nl</a></li>
+              <li><a href="mailto:info@airbagdata.nl">info@airbagdata.nl</a></li>
             </ul>
           </div>
           <div class="footer__col">
@@ -868,7 +884,7 @@
 
       <div class="footer__bottom">
         <div class="footer__bottom-inner">
-          <div>© 2026 AirbagCrashReset.nl — Alle rechten voorbehouden.</div>
+          <div>© 2026 AirbagData.nl — Alle rechten voorbehouden.</div>
           <div class="footer__bottom-links">
             <a href="#contact">Privacy</a>
             <a href="#contact">Voorwaarden</a>
