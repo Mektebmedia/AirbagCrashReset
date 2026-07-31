@@ -232,7 +232,7 @@
     mdbClear.style.display = raw.length > 0 ? 'flex' : 'none';
 
     if (raw.length < 3 && !brand) {
-      mdbCount.textContent = 'Typ om te zoeken in 16.878 modules...';
+      mdbCount.textContent = 'Typ om te zoeken in 14.264 modules...';
       mdbEmpty.style.display = 'block';
       mdbTable.style.display = 'none';
       mdbCta.style.display = 'none';

@@ -3,58 +3,383 @@ Generate all brand pages for AirbagCrashReset.nl
 Creates: /audi/index.html, /volkswagen/index.html, etc.
 """
 import json, os, re
+import xml.etree.ElementTree as ET
+import zipfile
 
 # ── Load data ──────────────────────────────────────────────────────────────────
-with open('/Users/sammihamadeh/.gemini/antigravity/brain/cbd86e4c-0d7d-4cb1-91f6-8cb47dd3ca25/modules_raw.json') as f:
-    data = json.load(f)
+PROJECT_DIR = '/Users/sammihamadeh/Desktop/AutomotiveNL-26/AirbagCrash'
+raw_json_path = (
+    '/Users/sammihamadeh/.gemini/antigravity/brain/cbd86e4c-0d7d-4cb1-91f6-8cb47dd3ca25/modules_raw.json'
+)
+with open(raw_json_path, 'r', encoding='utf-8') as f:
+  data = json.load(f)
 
 BRANDS_DATA = data.get('brands', [])
-PROJECT_DIR = '/Users/sammihamadeh/Desktop/AutomotiveNL-26/AirbagCrash'
 
 # ── Brand display names ────────────────────────────────────────────────────────
 BRAND_NAMES = {
-    'alfa-romeo': 'Alfa Romeo', 'audi': 'Audi', 'bmw': 'BMW', 'byd': 'BYD',
-    'chevrolet': 'Chevrolet', 'citroen': 'Citroën', 'dacia': 'Dacia', 'fiat': 'Fiat',
-    'ford': 'Ford', 'honda': 'Honda', 'hyundai': 'Hyundai', 'jaguar': 'Jaguar',
-    'jeep': 'Jeep', 'kia': 'Kia', 'land-rover': 'Land Rover', 'mazda': 'Mazda',
-    'mercedes': 'Mercedes-Benz', 'mini': 'Mini', 'mitsubishi': 'Mitsubishi',
-    'nissan': 'Nissan', 'opel': 'Opel', 'peugeot': 'Peugeot', 'renault': 'Renault',
-    'seat': 'Seat', 'skoda': 'Škoda', 'suzuki': 'Suzuki', 'tesla': 'Tesla',
-    'toyota': 'Toyota', 'volkswagen': 'Volkswagen', 'volvo': 'Volvo',
+    'alfa-romeo': 'Alfa Romeo',
+    'audi': 'Audi',
+    'bmw': 'BMW',
+    'byd': 'BYD',
+    'chevrolet': 'Chevrolet',
+    'citroen': 'Citroën',
+    'dacia': 'Dacia',
+    'fiat': 'Fiat',
+    'ford': 'Ford',
+    'honda': 'Honda',
+    'hyundai': 'Hyundai',
+    'jaguar': 'Jaguar',
+    'jeep': 'Jeep',
+    'kia': 'Kia',
+    'land-rover': 'Land Rover',
+    'mazda': 'Mazda',
+    'mercedes': 'Mercedes-Benz',
+    'mini': 'Mini',
+    'mitsubishi': 'Mitsubishi',
+    'nissan': 'Nissan',
+    'opel': 'Opel',
+    'peugeot': 'Peugeot',
+    'renault': 'Renault',
+    'seat': 'Seat',
+    'skoda': 'Škoda',
+    'suzuki': 'Suzuki',
+    'tesla': 'Tesla',
+    'toyota': 'Toyota',
+    'volkswagen': 'Volkswagen',
+    'volvo': 'Volvo',
 }
 
+# ── Brand descriptions ─────────────────────────────────────────────────────────
 BRAND_DESCRIPTIONS = {
-    'alfa-romeo': 'Wij resetten airbag modules van alle Alfa Romeo modellen. Neem contact op met uw onderdeelnummer.',
-    'audi': 'Wij resetten Bosch airbag modules voor alle Audi modellen — van de A1 tot de Q8. Snel, veilig en plug & play.',
-    'bmw': 'Professionele airbag module reset voor BMW. Bosch en Autoliv ECU\'s worden volledig hersteld naar fabriekstoestand.',
-    'byd': 'Airbag crash data reset voor BYD elektrische voertuigen. Contacteer ons voor recente modellen.',
-    'chevrolet': 'Wij resetten airbag modules voor alle Chevrolet modellen — inclusief Matiz, Spark, Cruze en Captiva.',
-    'citroen': 'Bosch, Continental en TRW airbag modules voor alle Citroën modellen gereset. Snel en zonder dealer.',
-    'dacia': 'Airbag module reset voor alle Dacia modellen. Logan, Sandero, Duster en meer.',
-    'fiat': 'Fiat airbag modules gereset voor 500, Panda, Punto, Tipo en alle andere modellen.',
-    'ford': 'Ford airbag reset specialist — van de Fiesta tot de Mondeo en Focus. Bosch, TRW en Autoliv.',
-    'honda': 'Honda airbag module reset voor alle modellen — Civic, CR-V, HR-V, Jazz en meer. 2.228 modules in database.',
-    'hyundai': 'Hyundai airbag crash data reset — i20, i30, i40, Tucson, Santa Fe en alle andere modellen.',
-    'jaguar': 'Jaguar airbag ECU reset voor XE, XF, XJ, F-Pace, E-Pace en I-Pace.',
-    'jeep': 'Jeep airbag module reset voor Renegade, Compass, Cherokee, Grand Cherokee en meer.',
-    'kia': 'Kia airbag reset voor Picanto, Rio, Ceed, Sportage, Sorento en alle andere modellen.',
-    'land-rover': 'Land Rover & Range Rover airbag module reset — Discovery, Defender, Evoque en Sport.',
-    'mazda': 'Mazda airbag crash data reset — Mazda 2, 3, 6, CX-3, CX-5, CX-30 en alle andere modellen.',
-    'mercedes': 'Mercedes-Benz airbag module reset voor A, B, C, E, S-Klasse en alle AMG/SUV modellen.',
-    'mini': 'Mini airbag module reset — One, Cooper, Cooper S, Clubman en Countryman.',
-    'mitsubishi': 'Mitsubishi airbag reset voor Colt, Lancer, ASX, Outlander, Eclipse Cross en meer.',
-    'nissan': 'Nissan airbag crash data reset — van de Micra tot de Qashqai en Navara. 1.813 modules beschikbaar.',
-    'opel': 'Opel airbag module reset voor Corsa, Astra, Mokka, Insignia, Zafira en meer.',
-    'peugeot': 'Peugeot airbag module reset — 108, 208, 308, 408, 508, 2008, 3008 en alle andere modellen.',
-    'renault': 'Renault airbag crash data reset voor Clio, Megane, Scenic, Kadjar, Captur en meer.',
-    'seat': 'Seat airbag module reset voor Ibiza, Leon, Ateca, Arona, Tarraco en alle andere modellen.',
-    'skoda': 'Škoda airbag module reset — Fabia, Octavia, Superb, Kodiaq, Karoq en meer.',
-    'suzuki': 'Suzuki airbag reset voor Alto, Swift, Vitara, S-Cross, Jimny en alle andere modellen.',
+    'alfa-romeo': (
+        'Wij resetten airbag modules van alle Alfa Romeo modellen. Neem contact'
+        ' op met uw onderdeelnummer.'
+    ),
+    'audi': (
+        'Wij resetten Bosch airbag modules voor alle Audi modellen — van de A1'
+        ' tot de Q8. Snel, veilig en plug & play.'
+    ),
+    'bmw': (
+        "Professionele airbag module reset voor BMW. Bosch en Autoliv ECU's"
+        ' worden volledig hersteld naar fabriekstoestand.'
+    ),
+    'byd': (
+        'Airbag crash data reset voor BYD elektrische voertuigen. Contacteer ons'
+        ' voor recente modellen.'
+    ),
+    'chevrolet': (
+        'Wij resetten airbag modules voor alle Chevrolet modellen — inclusief'
+        ' Matiz, Spark, Cruze en Captiva.'
+    ),
+    'citroen': (
+        'Bosch, Continental en TRW airbag modules voor alle Citroën modellen'
+        ' gereset. Snel en zonder dealer.'
+    ),
+    'dacia': (
+        'Airbag module reset voor alle Dacia modellen. Logan, Sandero, Duster'
+        ' en meer.'
+    ),
+    'fiat': (
+        'Fiat airbag modules gereset voor 500, Panda, Punto, Tipo en alle'
+        ' andere modellen.'
+    ),
+    'ford': (
+        'Ford airbag reset specialist — van de Fiesta tot de Mondeo en Focus.'
+        ' Bosch, TRW en Autoliv.'
+    ),
+    'honda': (
+        'Honda airbag module reset voor alle modellen — Civic, CR-V, HR-V, Jazz'
+        ' en meer. 2.221 modules in database.'
+    ),
+    'hyundai': (
+        'Hyundai airbag crash data reset — i20, i30, i40, Tucson, Santa Fe en'
+        ' alle andere modellen.'
+    ),
+    'jaguar': (
+        'Jaguar airbag ECU reset voor XE, XF, XJ, F-Pace, E-Pace en I-Pace.'
+    ),
+    'jeep': (
+        'Jeep airbag module reset voor Renegade, Compass, Cherokee, Grand'
+        ' Cherokee en meer.'
+    ),
+    'kia': (
+        'Kia airbag reset voor Picanto, Rio, Ceed, Sportage, Sorento en alle'
+        ' andere modellen.'
+    ),
+    'land-rover': (
+        'Land Rover & Range Rover airbag module reset — Discovery, Defender,'
+        ' Evoque en Sport.'
+    ),
+    'mazda': (
+        'Mazda airbag crash data reset — Mazda 2, 3, 6, CX-3, CX-5, CX-30 en alle'
+        ' andere modellen.'
+    ),
+    'mercedes': (
+        'Mercedes-Benz airbag module reset voor A, B, C, E, S-Klasse en alle'
+        ' AMG/SUV modellen.'
+    ),
+    'mini': (
+        'Mini airbag module reset — One, Cooper, Cooper S, Clubman en'
+        ' Countryman.'
+    ),
+    'mitsubishi': (
+        'Mitsubishi airbag reset voor Colt, Lancer, ASX, Outlander, Eclipse'
+        ' Cross en meer.'
+    ),
+    'nissan': (
+        'Nissan airbag crash data reset — van de Micra tot de Qashqai en'
+        ' Navara. 1.091 modules beschikbaar.'
+    ),
+    'opel': (
+        'Opel airbag module reset voor Corsa, Astra, Mokka, Insignia, Zafira en'
+        ' meer.'
+    ),
+    'peugeot': (
+        'Peugeot airbag module reset — 108, 208, 308, 408, 508, 2008, 3008 en'
+        ' alle andere modellen.'
+    ),
+    'renault': (
+        'Renault airbag crash data reset voor Clio, Megane, Scenic, Kadjar,'
+        ' Captur en meer.'
+    ),
+    'seat': (
+        'Seat airbag module reset voor Ibiza, Leon, Ateca, Arona, Tarraco en'
+        ' alle andere modellen.'
+    ),
+    'skoda': (
+        'Škoda airbag module reset — Fabia, Octavia, Superb, Kodiaq, Karoq en'
+        ' meer.'
+    ),
+    'suzuki': (
+        'Suzuki airbag reset voor Alto, Swift, Vitara, S-Cross, Jimny en alle'
+        ' andere modellen.'
+    ),
     'tesla': 'Tesla airbag module reset voor Model 3, Model S, Model X en Model Y.',
-    'toyota': 'Toyota airbag crash data reset — van de Yaris tot de Land Cruiser. 1.486 modules in database.',
-    'volkswagen': 'Volkswagen airbag module reset — Polo, Golf, Passat, Tiguan, T-Roc en meer. 1.031 modules.',
-    'volvo': 'Volvo airbag module reset voor V40, V60, V90, XC40, XC60 en XC90.',
+    'toyota': (
+        'Toyota airbag crash data reset — van de Yaris tot de Land Cruiser.'
+        ' 1.486 modules in database.'
+    ),
+    'volkswagen': (
+        'Volkswagen airbag module reset — Polo, Golf, Passat, Tiguan, T-Roc en'
+        ' meer. 800 modules.'
+    ),
+    'volvo': (
+        'Volvo airbag module reset voor V40, V60, V90, XC40, XC60 en XC90.'
+    ),
 }
+
+
+# ── Filter BRANDS_DATA against Excel (airbag.xlsx) ─────────────────────────────
+def read_xlsx(filename):
+  with zipfile.ZipFile(filename, 'r') as z:
+    strings = []
+    if 'xl/sharedStrings.xml' in z.namelist():
+      s_tree = ET.fromstring(z.read('xl/sharedStrings.xml'))
+      for si in s_tree:
+        texts = [t.text for t in si.iter() if t.tag.endswith('}t') and t.text]
+        strings.append(''.join(texts))
+    wb_tree = ET.fromstring(z.read('xl/workbook.xml'))
+    sheets = []
+    for sh in wb_tree.iter():
+      if sh.tag.endswith('}sheet'):
+        sheets.append((
+            sh.attrib.get('name'),
+            sh.attrib.get(
+                '{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id'
+            ),
+        ))
+    rels_tree = ET.fromstring(z.read('xl/_rels/workbook.xml.rels'))
+    rel_map = {}
+    for rel in rels_tree:
+      rel_map[rel.attrib.get('Id')] = rel.attrib.get('Target')
+    first_sheet_id = sheets[0][1]
+    target = rel_map[first_sheet_id]
+    if not target.startswith('xl/'):
+      target = 'xl/' + target
+    sheet_tree = ET.fromstring(z.read(target))
+    rows = []
+    for row in sheet_tree.iter():
+      if row.tag.endswith('}row'):
+        row_data = []
+        for c in row:
+          if c.tag.endswith('}c'):
+            t = c.attrib.get('t')
+            val = ''
+            for v in c:
+              if v.tag.endswith('}v') and v.text:
+                if t == 's':
+                  val = strings[int(v.text)]
+                else:
+                  val = v.text
+            row_data.append(val)
+        rows.append(row_data)
+    return rows
+
+
+excel_path = os.path.join(PROJECT_DIR, 'airbag.xlsx')
+if not os.path.exists(excel_path):
+  excel_path = '/Users/sammihamadeh/Downloads/airbag.xlsx'
+
+excel_rows = read_xlsx(excel_path)[1:]
+excel_normalized_strings = set()
+excel_tokens = set()
+
+
+def clean_token(s):
+  return re.sub(r'[^A-Z0-9]', '', s.upper())
+
+
+for r in excel_rows:
+  for cell in r:
+    if cell:
+      raw_pn = cell.upper()
+      raw_pn = re.sub(r'\([^\)]*\)', '', raw_pn)
+      raw_pn = re.sub(r'\b(VIRGIN|DUMP|OBD|BENCH|DIAG)\b', '', raw_pn)
+      raw_pn = raw_pn.strip()
+      if not raw_pn:
+        continue
+      excel_normalized_strings.add(clean_token(raw_pn))
+      for token in re.split(r'[\s/,-]+', raw_pn):
+        cleaned = clean_token(token)
+        if len(cleaned) >= 4 and any(c.isdigit() for c in cleaned):
+          excel_tokens.add(cleaned)
+
+
+def item_in_excel(pn, sn):
+  tokens_to_check = set()
+  for s in [pn, sn]:
+    if s:
+      s_clean = re.sub(
+          r'\b(BOSCH|CONTINENTAL|DENSO|TRW|TEMIC|AUTOLIV|MOBIS|VEONEER|SIEMENS|DELPHI|MARELLI)\b',
+          '',
+          s,
+          flags=re.I,
+      )
+      norm = clean_token(s_clean)
+      if len(norm) >= 4:
+        tokens_to_check.add(norm)
+      for part in re.split(r'[\s/,-]+', s_clean):
+        cleaned = clean_token(part)
+        if len(cleaned) >= 4 and any(c.isdigit() for c in cleaned):
+          tokens_to_check.add(cleaned)
+  return any(
+      t in excel_tokens or t in excel_normalized_strings for t in tokens_to_check
+  )
+
+
+filtered_brands_data = []
+total_modules_after = 0
+brand_counts = {}
+
+for b in BRANDS_DATA:
+  slug = b['url'].split('/')[-1]
+  new_models = []
+  b_after = 0
+  for mod in b.get('models', []):
+    new_mods = [
+        m
+        for m in mod.get('modules', [])
+        if item_in_excel(m.get('part_number', ''), m.get('supplier_number', ''))
+    ]
+    if new_mods:
+      mod_copy = dict(mod)
+      mod_copy['modules'] = new_mods
+      new_models.append(mod_copy)
+      b_after += len(new_mods)
+  b_copy = dict(b)
+  b_copy['models'] = new_models
+  b_copy['total_modules'] = b_after
+  filtered_brands_data.append(b_copy)
+  brand_counts[slug] = b_after
+  total_modules_after += b_after
+
+BRANDS_DATA = filtered_brands_data
+
+with open(
+    os.path.join(PROJECT_DIR, 'modules_filtered.json'), 'w', encoding='utf-8'
+) as f:
+  json.dump(
+      {'brands': BRANDS_DATA, 'total_modules': total_modules_after},
+      f,
+      ensure_ascii=False,
+      indent=2,
+  )
+
+
+# ── Synchronize modules-data.js, index.html, and main.js ───────────────────────
+def sync_site_data():
+  db_items = []
+  for b in BRANDS_DATA:
+    b_slug = b['url'].split('/')[-1]
+    for mod in b.get('models', []):
+      mod_name = mod.get('model', '')
+      for m in mod.get('modules', []):
+        pn = m.get('part_number', '').strip()
+        sn = m.get('supplier_number', '').strip()
+        raw_str = f'{pn} - {sn}'.strip(' -')
+        db_items.append({
+            'brand': b_slug,
+            'model': mod_name,
+            'part_number': pn,
+            'supplier_number': sn,
+            'raw': raw_str,
+        })
+  out_js = os.path.join(PROJECT_DIR, 'modules-data.js')
+  with open(out_js, 'w', encoding='utf-8') as f:
+    f.write(
+        'const MODULE_DB='
+        + json.dumps(db_items, separators=(',', ':'))
+        + ';\n'
+    )
+  print(
+      f'✓ Synchronized modules-data.js with {len(db_items):,} Excel-matched'
+      ' items'
+  )
+
+  index_path = os.path.join(PROJECT_DIR, 'index.html')
+  with open(index_path, 'r', encoding='utf-8') as f:
+    html = f.read()
+
+  total_str = f'{total_modules_after:,}'.replace(',', '.')
+  html = re.sub(r'16\.878', total_str, html)
+
+  for slug, count in brand_counts.items():
+    count_str = (
+        f"{f'{count:,}'.replace(',', '.')} modules" if count else 'Op aanvraag'
+    )
+    html = re.sub(
+        rf'(<a href="/{slug}/" class="brand-card" data-brand="{slug}">\s*<span>.*?</span>\s*<span class="brand-card__count">).*?(</span>\s*</a>)',
+        rf'\g<1>{count_str}\2',
+        html,
+    )
+    opt_str = f'{count:,}'.replace(',', '.') if count else 'Op aanvraag'
+    html = re.sub(
+        rf'(<option value="{slug}">).*?(</option>)',
+        rf'\g<1>{BRAND_NAMES.get(slug, slug.title())} ({opt_str})\2',
+        html,
+    )
+
+  with open(index_path, 'w', encoding='utf-8') as f:
+    f.write(html)
+  print(
+      f'✓ Synchronized index.html total ({total_str}) and brand counts'
+  )
+
+  main_path = os.path.join(PROJECT_DIR, 'main.js')
+  with open(main_path, 'r', encoding='utf-8') as f:
+    js = f.read()
+  js = re.sub(
+      r'Typ om te zoeken in \d+[\.,]?\d* modules\.\.\.',
+      f'Typ om te zoeken in {total_str} modules...',
+      js,
+  )
+  with open(main_path, 'w', encoding='utf-8') as f:
+    f.write(js)
+  print(f'✓ Synchronized main.js placeholder ({total_str})')
+
+
+sync_site_data()
 
 # ── All brand slugs list (for "other brands" section) ─────────────────────────
 ALL_SLUGS = [b['url'].split('/')[-1] for b in BRANDS_DATA]
